@@ -1,91 +1,49 @@
-# AI/Machine Learning Intern Challenge: Simple Content-Based Recommendation
+# Lumaa Intern Code Challenge
+Code Challenge Work Project: Movie Recommendation System
 
-**Deadline**: Sunday, Feb 23th 11:59 pm PST
+* Created a Virtual environment for the project (To include all the libraries I need for the project exclude other libraries): interncodechallenge. The virtual environment was created to ensure all the requirements are solely for the project.
 
----
+The movie dataset is from a public repository Kaggle: https://www.kaggle.com/datasets/parasharmanas/movie-recommendation-system/data
 
-## Overview
+# Algorithm development
+* The user input was converted to TF-IDF vectors.
+* A cosine similarity algorithm was adopted to process the user input and movie descriptions.
+* The algorithm was implemented in movie_recommendation.py
 
-Build a **content-based recommendation system** that, given a **short text description** of a user’s preferences, suggests **similar items** (e.g., movies) from a small dataset. This challenge should take about **3 hours**, so keep your solution **simple** yet **functional**.
+# Python programming language was used to develop the project
+* I started the program development as a command line interface (CLI) (i.e. main.py), I ensured the program is:
+* Simple and easy to read by adding comments and explaining the process in the comments.
+* Functional and reliable by testing the program several times.
+* User-friendly by making it as simple as possible.
+* Scalable, modular, extensible, well-structured, and easy to maintain and understand: datacleaning.py process the data input, and movie_recommendation.py handles the recommendation which enables the development and improvement of each section.
+* Good performance and isolates assumptions. The program can fail gracefully during exit and address security vulnerabilities.
+* Execution time was included for evaluating the movie recommendation algorithm's performance, which is very important when improving the algorithm. The developers or researchers will project the running performance on different interfaces.
 
-### Example Use Case
+# Graphical User Interface
 
-- The user inputs:  
-  *"I love thrilling action movies set in space, with a comedic twist."*  
-- Your system processes this description (query) and compares it to a dataset of items (e.g., movies with their plot summaries or keywords).  
-- You then return the **top 3–5 “closest” matches** to the user.
+* To ensure the program is User-friendly and robust, I introduced the graphical user interface (GUI) for users to easily interact with the program (main_gui.py).
+* The functions from the CLI were reused for the GUI, making it extensible and scalable.
+* I subjected it to several tests to ensure its efficiency and reliability.
+* The program code has been compiled as an executable program and can be distributed for User use. The executable program is main_gui.exe and a backup copy is at dist/main_gui.exe.
+* Ensure the movies.csv is in the same folder as the executable file when running and more movies can be added to improve the recommendation algorithm.
+* The average execution time is 1.6 s.
 
----
+# Web application for Remote access
+* The program was deployed as a web application using HTML, CSS for the front-end, and Flask python framework for the back-end development.
+* The program code for the web application is in the folder (web app). The web app is deployed on pythonanywhere web server for testing and ensuring its functionality. 
+* The application has been deployed and is currently active: [pythonanywhere with ](https://abdul58.pythonanywhere.com/) 
+* I ensured to keep it simple and user-friendly and did several tests to ensure the full operation of the project.
+* The web server is very slow since it is free, and the available resources are very limited. The average execution  time for the web app is 13 s.
 
-## Requirements
+# Future update
+* The execution time for the web app can be reduced by using an optimized paid service.
+* Improving the movie recommendation algorithm using deep learning algorithms such as neural network.
+* Deploying database for the movie dataset and user information and preferences.
+* Developing cross-platform applications such as mobile apps using Swift for iOS, java for Android, and Visual C# for Windows that can communicate with the web server using API such as REST API.
+* Improve User-friendliness, conduct more testing, search for vulnerabilities, and improve the application.
+* Keep updating the application and improving the movie recommendation algorithm!!!
 
-1. **Dataset**  
-   - Use a **small** public dataset of items (e.g., a list of movies with plot summaries, or other textual descriptions).  
-   - Make sure the dataset is easy to handle (maybe 100–500 rows) so the solution remains quick to implement and run.  
-   - Include the dataset in your forked repository *or* provide instructions/link on how to download it.  
+# Video on the program operation, explanation and code:
 
-2. **Approach**  
-   - **Content-Based**: At a minimum, use text similarity to recommend items.  
-     - For instance, you can transform both the user’s text input and each item’s description into TF-IDF vectors and compute **cosine similarity**.  
-   - Return the **top N** similar items (e.g., top 5).
+ https://wmich-my.sharepoint.com/:f:/g/personal/cjw2577_wmich_edu/Eh8324OwjY1DpYYj2gR31_4BkZw30qHMKU7SV2hGa6_vMg?e=NpGEU8
 
-3. **Code Organization**  
-   - You may use a **Jupyter Notebook** or **Python scripts**.  
-   - Keep it **readable** and **modular** (e.g., one section for loading data, one for building vectors, one for computing similarity, etc.).  
-   - Briefly comment or docstring your key functions/sections.
-
-4. **Output**  
-   - When given an input description (e.g., `"I like action movies set in space"`), your system should print or return a list of recommended items (e.g., 3–5 titles).  
-   - Include the similarity score or rank if you’d like.
-
-5. **Summary & Instructions**  
-   - A short `README.md` that includes:
-     - **Dataset**: Where it’s from, any steps to load it.  
-     - **Setup**: Python version, virtual environment instructions, and how to install dependencies (`pip install -r requirements.txt`).  
-     - **Running**: How to run your code (e.g., `python recommend.py "Some user description"` or open your notebook in Jupyter).  
-     - **Results**: A brief example of your system’s output for a sample query.
-
----
-
-## Deliverables
-
-1. **Fork the Public Repository**  
-   - **Fork** this repo into your own GitHub account.
-
-2. **Implement Your Solution**  
-   - Load and preprocess your dataset (e.g., read CSV, handle text columns).  
-   - Convert text data to vectors (e.g., TF-IDF).  
-   - Implement a function to compute similarity between the user’s query and each item’s description.  
-   - Return the top matches.
-   - Salary expectation per month (Mandatory)
-
-3. **Short Video Demo**  
-   - In a `.md` file (e.g., `demo.md`) within your fork, paste a link to a **brief screen recording** (video link).  
-   - Demonstrate:
-     - How you run the recommendation code.  
-     - A sample query and the results.
-
-4. **Deadline**  
-   - Submit your fork by **Sunday, Feb 23th 11:59 pm PST**.
-
-> **Note**: This should be doable within ~3 hours. Keep it **straightforward**—you do **not** need advanced neural networks or complex pipelines. A simple TF-IDF + cosine similarity approach is sufficient.
-
----
-
-## Evaluation Criteria
-
-1. **Functionality**  
-   - Does your code run without errors?  
-   - When given an input query, does it successfully output relevant items?
-
-2. **Code Quality**  
-   - Clear, commented code (where it counts).  
-   - Logical steps (load data → transform → recommend).
-
-3. **Clarity**  
-   - Is your `README.md` straightforward about setup, how to run, and what to expect?
-
-4. **ML/Recommendation Understanding**  
-   - Basic implementation of a content-based recommendation approach (vectorization, similarity measure).
-
-**We look forward to seeing your solution!** Good luck!

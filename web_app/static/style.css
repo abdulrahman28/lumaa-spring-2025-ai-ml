@@ -1,0 +1,29 @@
+/*
+styling of the web page
+*/
+
+body {
+    background-color: #f8f9fa;
+    font-family: "Times New Roman", serif;
+}
+
+.container {
+    max-width: 700px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card {
+    background: #f1f1f1;
+    padding: 10px;
+    border-left: 5px solid #007bff;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.movie-title {
+    font-weight: bold;
+    font-size: 18px;
+}

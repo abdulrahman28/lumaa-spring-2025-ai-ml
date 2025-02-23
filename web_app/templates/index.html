@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- HTML Page for the front-end {Client-side} -->
+    <div class="container mt-5">
+        <h2 class="text-center">Lumaa Intern Challenge Movie Recommendation System 🎬</h2>
+
+        <form method="post" class="mt-4">
+            <label for="movie_desc" class="form-label"><strong>Enter a short description of a movie you like:</strong></label>
+            <textarea name="movie_desc" id="movie_desc" class="form-control" rows="2" required>{{ user_input }}</textarea>
+            <button type="submit" class="btn btn-primary mt-3">Get Recommendations</button>
+        </form>
+
+        {% if recommendations %}
+        <div class="mt-4">
+            <p><strong>Execution time: {{ elapsed_time | round(2) }} s </strong></p>  <!-- Display time taken -->
+            <h4>Recommended Movies:</h4>
+            <p>Your Description:<strong> {{ user_input }}</strong> </p>  <!-- Display user input -->
+            <div class="recommendations">
+                <!-- To output the recommendation results -->
+                {% for movie in recommendations %}
+                <div class="movie-card">
+                    <h5 class="movie-title">{{ movie.title | title }}</h5>
+                    <p>{{ movie.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
